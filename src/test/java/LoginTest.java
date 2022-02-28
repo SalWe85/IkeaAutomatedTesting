@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -9,7 +8,7 @@ public class LoginTest extends BaseTest{
      * Log in with valid credentials
      * 1. Navigate to home page
      * 2. Click on header log in button, to open modal
-     * 3. Click on log in button inside of a modal
+     * 3. Click on log in button inside a modal
      * 4. Enter valid credentials
      * 5. Click on log in button
      *
@@ -22,7 +21,7 @@ public class LoginTest extends BaseTest{
         ChromeDriver driver = openChromeDriver();
 
         try{
-       //Openin ikea website, clicking on header log in button to open a modal.
+       //Open in ikea website, clicking on header log in button to open a modal.
         BasePage basePage = new BasePage(driver);
         basePage.clickHeaderLoginButton();
 
@@ -53,8 +52,8 @@ public class LoginTest extends BaseTest{
      * Log in with invalid credentials
      * 1. Navigate to home page
      * 2. Click on header log in button, to open modal
-     * 3. Click on log in button inside of a modal
-     * 4. Enter invalid random generaterd credentials
+     * 3. Click on log in button inside modal
+     * 4. Enter invalid random generated credentials
      * 5. Click on log in button
      *
      * Expected results:
@@ -66,7 +65,7 @@ public class LoginTest extends BaseTest{
         ChromeDriver driver = openChromeDriver();
 
         try {
-            //Openin ikea website, clicking on header log in button to open a modal.
+            //Open in ikea website, clicking on header log in button to open a modal.
             BasePage basePage = new BasePage(driver);
             basePage.clickHeaderLoginButton();
 
