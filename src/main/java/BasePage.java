@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Random;
+
 public class BasePage {
 
     ChromeDriver driver = null;
@@ -18,6 +20,12 @@ public class BasePage {
 
     @FindBy (xpath = "//span[.='Odjavi se']")
     WebElement signOutModalButton;
+
+    @FindBy (className = "search-field__input")
+    WebElement searchInputField;
+
+    @FindBy (id = "search-box__searchbutton")
+    WebElement searhInputFieldButton;
 
     public BasePage(ChromeDriver driver) {
         PageFactory.initElements(driver, this);
@@ -36,6 +44,16 @@ public class BasePage {
         loginModalButton.click();
         return new LoginPage(driver);
     }
+
+    public SearchResultsPage searchRandomProduct() {
+        print("BasePage: Entering random product to header search field and moving to search result page.");
+        String [] listOfProductNames = {"STEFAN", "TUDDAL", "GRIMHULT", "HILJA", "FEJKA", "METOD", "SMYCKA", "ALBERT", "OMAR", "HALVED"};
+        String randomProductName = listOfProductNames[(int) (Math.random() * listOfProductNames.length)];
+        searchInputField.sendKeys(randomProductName);
+        searhInputFieldButton.click();
+        return new SearchResultsPage(driver);
+    }
+
 
     //Metoda za sve wait-ove
     public static void waitByXpath (ChromeDriver driver, String xpath) {

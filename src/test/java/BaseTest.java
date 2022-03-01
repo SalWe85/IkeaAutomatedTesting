@@ -8,6 +8,7 @@ public class BaseTest {
 
 
 
+
     public ChromeDriver openChromeDriver() {
         print("Opening Chrome Driver");
         ChromeOptions options = new ChromeOptions();
@@ -27,6 +28,11 @@ public class BaseTest {
 
     public static void print(String s) {
         System.out.println(s);
+    }
+
+    public static void waitByXpath (ChromeDriver driver, String xpath) {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
 
 }

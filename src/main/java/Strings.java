@@ -4,6 +4,7 @@ public class Strings {
     public static final String HOME_PAGE_URL = "https://www.ikea.com/rs/sr/";
     public static final String LOYALTY_HUB_PAGE = "https://www.ikea.com/rs/sr/loyalty-hub/";
     public static final String LOGIN_PAGE = "https://rs.accounts.ikea.com/login";
+    public static final String SEARCH_RESULT_PAGE = "https://www.ikea.com/rs/sr/search/products";
 
     //Credentials
     public static final String USERNAME_VALID = "zsaleg@gmail.com";
