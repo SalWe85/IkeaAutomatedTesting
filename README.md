@@ -6,6 +6,7 @@ v0.3 : Select most expensive product Test and add it to shopping cart test.<br>
       &nbsp;&nbsp;&nbsp;**Test 5 (ShoppingCartTest):** <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Chaining previous tests to find random most expensive product. Than adding it to shopping cart, navigating to shopping cart, <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checking if url is correct and checking if product is added to shopping cart. <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- IMPORTANT: If product is not in stock, test will continue by searching for another product.<br>
       &nbsp;&nbsp;&nbsp;**Test 4 (ProductSortingTest):** <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Search for random product, sort results by price (high to low), click on most expensive one and open it. <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Added method that checks if sorting is successfull by comparing first product price to second one. <br>
