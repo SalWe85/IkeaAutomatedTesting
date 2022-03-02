@@ -1,6 +1,6 @@
 # IkeaAutomatedTesting
  Selenium automated testing on ikea.rs site
- ------------------------------------------<br>
+ <br>------------------------------------------<br>
  <br>
 v0.3 : Select most expensive product Test and add it to shopping cart test.<br>
       &nbsp;&nbsp;&nbsp;**Test 5 (ShoppingCartTest):** <br>
