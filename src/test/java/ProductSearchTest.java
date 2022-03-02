@@ -10,9 +10,9 @@ public class ProductSearchTest extends BaseTest{
 
 
     /**
-     * Search random product and check if search result is correct
+     * Search for random product from a list of product names and check if search result is correct
      * 1. Navigate to home page
-     * 2. Enter random product name in header search field
+     * 2. Enter random product name in header search field from a list of product names
      * 3. Navigate to new search result page
      * 4. Collect all listed products
      *
@@ -39,14 +39,14 @@ public class ProductSearchTest extends BaseTest{
             //Collect product names listed in search result page and verify that first product corresponds to searched keyword.
             waitByXpath(driver, "//span[@class = 'range-revamp-header-section__title--small notranslate']");
             List<WebElement> searchedProductsList = driver.findElements(By.xpath("//span[@class = 'range-revamp-header-section__title--small notranslate']"));
-            String test = searchedProductsList.get(0).getText();
+            String firstProductName = searchedProductsList.get(0).getText();
             String searchedWord = driver.findElement(By.xpath("//b[@class = 'notranslate']")).getText();
-            assert searchedWord.equals(test) : "Error. Expected: " + searchedWord + ". Actual: " + test;
-            print("Assert passed. Searched keyword: " + test + ", is same as first product listed in search results.");
+            assert searchedWord.equals(firstProductName) : "Error. Expected: " + searchedWord + ". Actual: " + firstProductName;
+            print("Assert passed. Searched keyword: " + firstProductName + ", is same as first product listed in search results.");
 
 
         } finally {
-           driver.quit();
+          driver.quit();
         }
     }
 
