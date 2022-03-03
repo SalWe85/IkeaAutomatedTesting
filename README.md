@@ -4,12 +4,14 @@
  <br>
 v0.4 : Home page 'dot' button test
       &nbsp;&nbsp;&nbsp;**Test 6 (HomePageDotTest):** <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Scrolling down to 'dot' element on home page, hovering over it for 2 sec and clicking on it. Verifying that correct product was opened.
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Scrolling down to 'dot' element on home page, hovering over it for 2 sec and clicking on it. Verifying that correct product was opened.<br>
+<br>
 v0.3 : Select most expensive product Test and add it to shopping cart test.<br>
       &nbsp;&nbsp;&nbsp;**Test 5 (ShoppingCartTest):** <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Chaining previous tests to find random most expensive product. Than adding it to shopping cart, navigating to shopping cart, <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checking if url is correct and checking if product is added to shopping cart. <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- IMPORTANT: If product is not in stock, test will continue by searching for another product.<br>
+<br>
       &nbsp;&nbsp;&nbsp;**Test 4 (ProductSortingTest):** <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Search for random product, sort results by price (high to low), click on most expensive one and open it. <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Added method that checks if sorting is successfull by comparing first product price to second one. <br>
