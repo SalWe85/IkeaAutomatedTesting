@@ -2,6 +2,9 @@
  Selenium automated testing on ikea.rs site
  <br>------------------------------------------<br>
  <br>
+v0.4 : Home page 'dot' button test
+      &nbsp;&nbsp;&nbsp;**Test 6 (HomePageDotTest):** <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Scrolling down to 'dot' element on home page, hovering over it for 2 sec and clicking on it. Verifying that correct product was opened.
 v0.3 : Select most expensive product Test and add it to shopping cart test.<br>
       &nbsp;&nbsp;&nbsp;**Test 5 (ShoppingCartTest):** <br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Chaining previous tests to find random most expensive product. Than adding it to shopping cart, navigating to shopping cart, <br>
@@ -23,4 +26,4 @@ v0.1 : First commit.<br>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Log in with valid credentials.<br>
  ------------------------------------------<br>
  TO DO:<br>
- At least 5 more tests.<br>
+ At least 4 more tests.<br>
