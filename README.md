@@ -2,7 +2,7 @@
  Selenium automated testing on ikea.rs site
  <br>------------------------------------------<br>
  <br>
-v0.4 : Home page 'dot' button test
+v0.4 : Home page 'dot' button test<br>
       &nbsp;&nbsp;&nbsp;**Test 6 (HomePageDotTest):** <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Scrolling down to 'dot' element on home page, hovering over it for 2 sec and clicking on it. Verifying that correct product was opened.<br>
 <br>
