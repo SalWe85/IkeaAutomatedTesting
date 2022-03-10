@@ -2,6 +2,9 @@
  Selenium automated testing on ikea.rs site
  <br>------------------------------------------<br>
  <br>
+v0.41 : Changes to ProductSearchTest and many locators<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Code inside ProducSearchTest moved to SearchResultsPage and converted to two new methods. <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Many element names changed on web site, had to update correct paths in many Page classes. 
 v0.4 : Home page 'dot' button test<br>
       &nbsp;&nbsp;&nbsp;**Test 6 (HomePageDotTest):** <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Scrolling down to 'dot' element on home page, hovering over it for 2 sec and clicking on it. Verifying that correct product was opened.<br>
