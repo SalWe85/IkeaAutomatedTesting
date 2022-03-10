@@ -37,12 +37,11 @@ public class ProductSearchTest extends BaseTest{
             print("Assert passed. Search result page opened.");
 
             //Collect product names listed in search result page and verify that first product corresponds to searched keyword.
-            waitByXpath(driver, "//span[@class = 'range-revamp-header-section__title--small notranslate']");
-            List<WebElement> searchedProductsList = driver.findElements(By.xpath("//span[@class = 'range-revamp-header-section__title--small notranslate']"));
-            String firstProductName = searchedProductsList.get(0).getText();
-            String searchedWord = driver.findElement(By.xpath("//b[@class = 'notranslate']")).getText();
-            assert searchedWord.equals(firstProductName) : "Error. Expected: " + searchedWord + ". Actual: " + firstProductName;
-            print("Assert passed. Searched keyword: " + firstProductName + ", is same as first product listed in search results.");
+            SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
+
+            assert searchResultsPage.getNameOfFirstItemFromSearchPage().equals(searchResultsPage.getSearchedWordFromTitle()) : "Error. Expected: " + searchResultsPage.getSearchedWordFromTitle()
+                    + ". Actual: " + searchResultsPage.getNameOfFirstItemFromSearchPage();
+            print("Assert passed. Searched keyword: " + searchResultsPage.getSearchedWordFromTitle() + ", is same as first product listed in search results.");
 
 
         } finally {

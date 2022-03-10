@@ -30,8 +30,8 @@ public class SearchResultsPage extends BasePage{
     }
 
     boolean areProductsSortedByHighestPrice () {
-        waitByXpath(driver, "//span[@class='range-revamp-price__integer']");
-        List<WebElement> productPrices = driver.findElements(By.className("range-revamp-price__integer"));
+        waitByXpath(driver, "//span[@class = 'pip-price__integer']");
+        List<WebElement> productPrices = driver.findElements(By.className("pip-price__integer"));
         double firstProductPrice = Double.parseDouble(productPrices.get(0).getText());
         double secondProductPrice = Double.parseDouble(productPrices.get(1).getText());
         if (firstProductPrice >= secondProductPrice) {
@@ -43,9 +43,19 @@ public class SearchResultsPage extends BasePage{
 
     public ProductPage clickOnFirstProduct() {
         print("SearchResultsPage: clicking on first product.");
-        waitByXpath(driver,"//span[@class = 'range-revamp-price__integer']");
-        List<WebElement> products = driver.findElements(By.className("range-revamp-price__integer"));
+        waitByXpath(driver,"//span[@class = 'pip-price__integer']");
+        List<WebElement> products = driver.findElements(By.className("pip-price__integer"));
         products.get(0).click();
         return new ProductPage(driver);
+    }
+
+    public String getNameOfFirstItemFromSearchPage() {
+        waitByXpath(driver, "//span[@class = 'pip-header-section__title--small notranslate']");
+        List<WebElement> searchedProductsList = driver.findElements(By.xpath("//span[@class = 'pip-header-section__title--small notranslate']"));
+        return searchedProductsList.get(0).getText();
+    }
+
+    public String getSearchedWordFromTitle() {
+        return driver.findElement(By.xpath("//b[@class = 'notranslate']")).getText();
     }
 }

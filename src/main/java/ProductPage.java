@@ -1,13 +1,16 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class ProductPage extends BasePage{
 
     @FindBy (xpath = "//button[@data-test-target='add-to-cart-button']")
     WebElement buttonAddToCart;
 
-    @FindBy (xpath = "//button[contains(@class, 'range-revamp-btn')]/span/span")
+    @FindBy (xpath = "//div[@class='pip-buy-module__buttons--left']/button/span/span")
     WebElement getButtonAddToCartText;
 
     public ProductPage(ChromeDriver driver){super(driver);}
@@ -30,4 +33,7 @@ public class ProductPage extends BasePage{
             basePage.searchRandomProduct().sortProductsByHighestPrice().clickOnFirstProduct().addProductToShoppingCartIfAvailable();
         }
     }
+
+
+
 }

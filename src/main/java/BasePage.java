@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -51,7 +52,7 @@ public class BasePage {
         String [] listOfProductNames = {"TUDDAL", "HILJA", "FEJKA", "METOD", "SMYCKA", "OMAR", "FORSAND"};
         String randomProductName = listOfProductNames[(int) (Math.random() * listOfProductNames.length)];
         searchInputField.sendKeys(randomProductName);
-        searhInputFieldButton.click();
+        searchInputField.sendKeys(Keys.ENTER);
         return new SearchResultsPage(driver);
     }
 
