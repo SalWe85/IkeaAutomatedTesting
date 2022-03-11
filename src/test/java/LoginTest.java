@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest{
         basePage.clickModalLoginButton();
         assert driver.getCurrentUrl().contains(Strings.LOGIN_PAGE) : "Error. Expected: " + Strings.LOGIN_PAGE
                     + ". Actual: " + driver.getCurrentUrl();
-        print("Assert passed. Log in page opened.");
+        log.info("Assert passed. Log in page opened.");
 
         //Log in with valid credentials
         LoginPage loginPage = new LoginPage(driver);
@@ -40,7 +40,7 @@ public class LoginTest extends BaseTest{
 
         assert driver.getCurrentUrl().contains(Strings.LOYALTY_HUB_PAGE) : "Error. Expected: " + Strings.LOYALTY_HUB_PAGE
                 + ". Actual: " + driver.getCurrentUrl();
-        print("Assert passed. Successfully logged in.");
+            log.info("Assert passed. Successfully logged in.");
 
     } finally {
            driver.quit();
@@ -73,7 +73,7 @@ public class LoginTest extends BaseTest{
             basePage.clickModalLoginButton();
             assert driver.getCurrentUrl().contains(Strings.LOGIN_PAGE) : "Error. Expected: " + Strings.LOGIN_PAGE
                     + ". Actual: " + driver.getCurrentUrl();
-            print("Assert passed. Log in page opened.");
+            log.info("Assert passed. Log in page opened.");
 
             //Enter random credentials.
             LoginPage loginPage = new LoginPage(driver);
@@ -84,7 +84,7 @@ public class LoginTest extends BaseTest{
 
             assert driver.getCurrentUrl().contains(Strings.LOGIN_PAGE) : "Error. Expected: " + Strings.LOGIN_PAGE
                     + ". Actual: " + driver.getCurrentUrl();
-            print("Assert passed. Log in failed.");
+            log.info("Assert passed. Log in failed.");
 
         }finally {
             driver.quit();

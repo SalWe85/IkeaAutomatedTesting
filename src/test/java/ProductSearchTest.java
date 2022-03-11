@@ -34,14 +34,14 @@ public class ProductSearchTest extends BaseTest{
             //Verify that we opened search result page
             assert driver.getCurrentUrl().contains(Strings.SEARCH_RESULT_PAGE) : "Error. Expected: " + Strings.SEARCH_RESULT_PAGE
                     + ". Actual: " + driver.getCurrentUrl();
-            print("Assert passed. Search result page opened.");
+            log.info("Assert passed. Search result page opened.");
 
             //Collect product names listed in search result page and verify that first product corresponds to searched keyword.
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
 
             assert searchResultsPage.getNameOfFirstItemFromSearchPage().equals(searchResultsPage.getSearchedWordFromTitle()) : "Error. Expected: " + searchResultsPage.getSearchedWordFromTitle()
                     + ". Actual: " + searchResultsPage.getNameOfFirstItemFromSearchPage();
-            print("Assert passed. Searched keyword: " + searchResultsPage.getSearchedWordFromTitle() + ", is same as first product listed in search results.");
+            log.info("Assert passed. Searched keyword: " + searchResultsPage.getSearchedWordFromTitle() + ", is same as first product listed in search results.");
 
 
         } finally {

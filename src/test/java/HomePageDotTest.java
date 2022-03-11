@@ -25,7 +25,7 @@ public class HomePageDotTest extends BaseTest{
 
             assert driver.getCurrentUrl().contains(Strings.HILDAMARIA_PODUCT_PAGE) : "Error, expected: " + Strings.HILDAMARIA_PODUCT_PAGE
                     + ", Actual: " + driver.getCurrentUrl();
-            print("Assert passed. Correct product selected.");
+            log.info("Assert passed. Correct product selected.");
         }finally {
             driver.quit();
         }

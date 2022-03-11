@@ -6,10 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+
 
 public class BasePage {
 
+    public static Logger log = LogManager.getLogger();
+
     ChromeDriver driver = null;
+
+    @BeforeSuite
+    public void setUp() {
+        if (driver == null) {
+            log.info("Test started!");
+        }
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        log.info("Test has finished!");
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
 
     @FindBy (xpath = "//a[@data-tracking-label='profile']")
     WebElement loginHeaderButton;
@@ -35,20 +59,20 @@ public class BasePage {
     }
 
     public void clickHeaderLoginButton () {
-        print("BasePage: Clicking on header log in button.");
+        log.info("Clicking on header log in button.");
         waitByXpath(driver, "//a[@data-tracking-label='profile']");
         loginHeaderButton.click();
     }
 
     public LoginPage clickModalLoginButton () {
-        print("BasePage: Clicking on modal log in button.");
+        log.info("Clicking on modal log in button.");
         waitByXpath(driver, "//span[.='Prijavi se']" );
         loginModalButton.click();
         return new LoginPage(driver);
     }
 
     public SearchResultsPage searchRandomProduct() {
-        print("BasePage: Entering random product to header search field and moving to search result page.");
+        log.info("Entering random product to header search field and moving to search result page.");
         String [] listOfProductNames = {"TUDDAL", "HILJA", "FEJKA", "METOD", "SMYCKA", "OMAR", "FORSAND"};
         String randomProductName = listOfProductNames[(int) (Math.random() * listOfProductNames.length)];
         searchInputField.sendKeys(randomProductName);
@@ -57,7 +81,7 @@ public class BasePage {
     }
 
     public ShoppingCartPage clickOnHeaderShoppingCartButton(){
-        print("BasePage: Clicking on header shopping cart button.");
+        log.info("Clicking on header shopping cart button.");
         shopingCartHeaderButton.click();
         return new ShoppingCartPage(driver);
     }
@@ -74,8 +98,5 @@ public class BasePage {
         } catch (Exception e) {}
     }
 
-    public static void print (String x) {
-        System.out.println(x);
-    }
 }
 

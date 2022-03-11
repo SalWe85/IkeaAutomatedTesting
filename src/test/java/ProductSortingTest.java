@@ -26,7 +26,7 @@ public class ProductSortingTest extends BaseTest{
         SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
         String isFirstProductMostExpensive = String.valueOf(searchResultsPage.areProductsSortedByHighestPrice());
         assert isFirstProductMostExpensive.equals("true") : "Error, sorting by highest price failed";
-        print("Assert successful. Products are sorted by highest price.");
+        log.info("Assert successful. Products are sorted by highest price.");
 
         } finally {
             driver.quit();

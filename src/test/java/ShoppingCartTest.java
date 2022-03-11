@@ -35,13 +35,13 @@ public class ShoppingCartTest extends BaseTest{
             waitByXpath(driver, "//a[@data-tracking-label='ikea-logo']");
             assert driver.getCurrentUrl().contains(Strings.SHOPPING_CART_PAGE) : "Error, expected url: " + Strings.SHOPPING_CART_PAGE
                     + ", Actual url: " + driver.getCurrentUrl();
-            print("Assert passed. Shopping cart page opened.");
+            log.info("Assert passed. Shopping cart page opened.");
 
             //Verify that product is added to shopping cart.
             ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
             String isRemoveButtonPresent = String.valueOf(shoppingCartPage.isRemoveButtonIsPresent());
             assert isRemoveButtonPresent.equals("true") : "Error, shopping cart is empty, no product remove button present.";
-            print("Assert passed. Product is added to shopping cart.");
+            log.info("Assert passed. Product is added to shopping cart.");
 
 
         } finally {

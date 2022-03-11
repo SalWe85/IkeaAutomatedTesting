@@ -25,10 +25,10 @@ public class ProductPage extends BasePage{
 
     public void addProductToShoppingCartIfAvailable() {
         if (isProductAvailable()==true){
-            print("ProductPage: Product is available, adding to cart.");
+            log.info("Product is available, adding to cart.");
             buttonAddToCart.click();
         } else {
-            print("ProductPage: Product is not available, searching for different product");
+            log.info(" Product is not available, searching for different product");
             BasePage basePage = new BasePage(driver);
             basePage.searchRandomProduct().sortProductsByHighestPrice().clickOnFirstProduct().addProductToShoppingCartIfAvailable();
         }

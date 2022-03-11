@@ -10,11 +10,11 @@ public class ShoppingCartPage extends BasePage{
     public ShoppingCartPage(ChromeDriver driver){super(driver);}
 
     boolean isRemoveButtonIsPresent (){
-        print("ShopingCartPage: Checking if remove button is present.");
+        log.info("Checking if remove button is present.");
         if (removeButton.isDisplayed()) {
             return true;
         } else {
-            print("ShopingCartPage: remove button is not present");
+           log.error("Remove button is not present");
             return false;
         }
     }

@@ -2,7 +2,10 @@
  Selenium automated testing on ikea.rs site
  <br>------------------------------------------<br>
  <br>
-v0.41 : Changes to ProductSearchTest and many locators<br>
+v.0.5 : Added log4j.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implemented log4j logging utility. All print() methods replaced with log.info / log.error.<br>
+<br>
+v0.4.1 : Changes to ProductSearchTest and many locators<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Code inside ProductSearchTest moved to SearchResultsPage and converted to two new methods. <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Many element names changed on web site, had to update correct paths in many Page classes. <br>
 <br>

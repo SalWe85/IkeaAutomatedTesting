@@ -25,7 +25,7 @@ public class LoginPage extends BasePage{
 
     //Method for entering valid credentials
     public void enterValidCredentialsAndLogIn (){
-        print("LoginPage: Entering valid credentials and logging in.");
+        log.info("Entering valid credentials and logging in.");
         usernameInputField.sendKeys(Strings.USERNAME_VALID);
         passwordInputField.sendKeys(Strings.PASSWORD_VALID);
         loginButton.click();
@@ -33,7 +33,7 @@ public class LoginPage extends BasePage{
 
     //Method for entering fake log in credentials using faker
     public void enterInvalidCredentials () {
-        print("LoginPage: Entering invalid credentials.");
+        log.info("Entering invalid credentials.");
         Faker faker = new Faker();
         usernameInputField.sendKeys(faker.internet().emailAddress());
         passwordInputField.sendKeys(faker.number().digits(10));

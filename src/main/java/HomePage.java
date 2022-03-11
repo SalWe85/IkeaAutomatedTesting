@@ -22,10 +22,10 @@ public class HomePage extends BasePage{
 
 
     public void clickOnPillowDot() {
-        print("HomePage: Scrolling to element.");
+        log.info("Scrolling to element.");
         Actions actions = new Actions(driver);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", dotLampMojna);
-        print("HomePage: Hovering over an element and clicking it.");
+        log.info("Hovering over an element and clicking it.");
         actions.moveToElement(dotPillowHildamaria).perform();
         sleep(2);
         dotPillowHildamaria.click();

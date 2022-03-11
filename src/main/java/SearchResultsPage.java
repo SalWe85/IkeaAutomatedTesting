@@ -21,7 +21,7 @@ public class SearchResultsPage extends BasePage{
 
 
     public SearchResultsPage sortProductsByHighestPrice () {
-        print("SearchResultsPage: Sorting products by highest price.");
+        log.info("Sorting products by highest price.");
         waitByXpath(driver, "//button[@id='SORT']");
         sortMainButton.click();
         sortOptionByPriceHigh.click();
@@ -42,7 +42,7 @@ public class SearchResultsPage extends BasePage{
     }
 
     public ProductPage clickOnFirstProduct() {
-        print("SearchResultsPage: clicking on first product.");
+        log.info("Clicking on first product.");
         waitByXpath(driver,"//span[@class = 'pip-price__integer']");
         List<WebElement> products = driver.findElements(By.className("pip-price__integer"));
         products.get(0).click();
