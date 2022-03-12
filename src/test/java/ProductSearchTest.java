@@ -1,8 +1,7 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
-import java.util.List;
+
 
 
 public class ProductSearchTest extends BaseTest{
@@ -34,15 +33,24 @@ public class ProductSearchTest extends BaseTest{
             //Verify that we opened search result page
             assert driver.getCurrentUrl().contains(Strings.SEARCH_RESULT_PAGE) : "Error. Expected: " + Strings.SEARCH_RESULT_PAGE
                     + ". Actual: " + driver.getCurrentUrl();
+
+            // Log4j
             log.info("Assert passed. Search result page opened.");
+
+            //Testng
+            //Reporter.log("Assert passed. Search result page opened.<br>");
 
             //Collect product names listed in search result page and verify that first product corresponds to searched keyword.
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
 
             assert searchResultsPage.getNameOfFirstItemFromSearchPage().equals(searchResultsPage.getSearchedWordFromTitle()) : "Error. Expected: " + searchResultsPage.getSearchedWordFromTitle()
                     + ". Actual: " + searchResultsPage.getNameOfFirstItemFromSearchPage();
+
+            // Log4j
             log.info("Assert passed. Searched keyword: " + searchResultsPage.getSearchedWordFromTitle() + ", is same as first product listed in search results.");
 
+            //Testng
+            //Reporter.log("Assert passed. Searched keyword: " + searchResultsPage.getSearchedWordFromTitle() + ", is same as first product listed in search results.");
 
         } finally {
           driver.quit();

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Assert passed. Search result page opened.<br>]]>
+    </line>
+    <line>
+      <![CDATA[Assert passed. Searched keyword: TUDDAL, is same as first product listed in search results.]]>
+    </line>
+  </reporter-output>
+  <suite name="IkeaAutomatedTesting" duration-ms="8107" started-at="2022-03-12T13:57:08 CET" finished-at="2022-03-12T13:57:17 CET">
+    <groups>
+    </groups>
+    <test name="testngTest" duration-ms="8107" started-at="2022-03-12T13:57:08 CET" finished-at="2022-03-12T13:57:17 CET">
+      <class name="ProductSearchTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ProductSearchTest@3754a4bf]" name="setUp" is-config="true" duration-ms="15" started-at="2022-03-12T13:57:08 CET" finished-at="2022-03-12T13:57:08 CET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="searchForRandomPredefinedProduct()[pri:0, instance:ProductSearchTest@3754a4bf]" name="searchForRandomPredefinedProduct" duration-ms="8091" started-at="2022-03-12T13:57:08 CET" finished-at="2022-03-12T13:57:17 CET">
+          <reporter-output>
+            <line>
+              <![CDATA[Assert passed. Search result page opened.<br>]]>
+            </line>
+            <line>
+              <![CDATA[Assert passed. Searched keyword: TUDDAL, is same as first product listed in search results.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- searchForRandomPredefinedProduct -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ProductSearchTest@3754a4bf]" name="tearDown" is-config="true" duration-ms="0" started-at="2022-03-12T13:57:17 CET" finished-at="2022-03-12T13:57:17 CET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ProductSearchTest -->
+    </test> <!-- testngTest -->
+  </suite> <!-- IkeaAutomatedTesting -->
+</testng-results>
