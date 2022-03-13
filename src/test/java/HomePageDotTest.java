@@ -23,7 +23,7 @@ public class HomePageDotTest extends BaseTest{
             HomePage homePage = new HomePage(driver);
             homePage.clickOnPillowDot();
 
-            assert driver.getCurrentUrl().contains(Strings.HILDAMARIA_PODUCT_PAGE) : "Error, expected: " + Strings.HILDAMARIA_PODUCT_PAGE
+            assert driver.getCurrentUrl().contains(Strings.TARNO_PRODUCT_PAGE) : "Error, expected: " + Strings.TARNO_PRODUCT_PAGE
                     + ", Actual: " + driver.getCurrentUrl();
             log.info("Assert passed. Correct product selected.");
         }finally {

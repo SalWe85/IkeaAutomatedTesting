@@ -9,14 +9,14 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage{
 
 
-    @FindBy (xpath = "//*[@id=\"4f9f54f0-671c-11ec-bcb3-23d8b820c4cd\"]/div/div/div/div[2]/div/div/div[1]/div/div/div/span/div[1]/a")
-    WebElement dotSofaKlippan;
+    @FindBy (xpath = "//a[@aria-labelledby='pub__shoppable-image-art,20430141']")
+    WebElement dotFullspackad;
 
-    @FindBy (xpath = "//*[@id=\"4f9f54f0-671c-11ec-bcb3-23d8b820c4cd\"]/div/div/div/div[2]/div/div/div[1]/div/div/div/span/div[3]/a")
-    WebElement dotLampMojna;
+    @FindBy (xpath = "//a[@aria-labelledby='pub__shoppable-image-spr,69898415']")
+    WebElement dotTarno;
 
-    @FindBy (xpath = "//*[@id=\"4f9f54f0-671c-11ec-bcb3-23d8b820c4cd\"]/div/div/div/div[2]/div/div/div[1]/div/div/div/span/div[6]/a")
-    WebElement dotPillowHildamaria;
+    @FindBy (id = "pub__shoppable-image-spr,69898415")
+    WebElement dotTooltipTarno;
 
     public HomePage(ChromeDriver driver) {super(driver);}
 
@@ -24,10 +24,10 @@ public class HomePage extends BasePage{
     public void clickOnPillowDot() {
         log.info("Scrolling to element.");
         Actions actions = new Actions(driver);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", dotLampMojna);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", dotFullspackad);
         log.info("Hovering over an element and clicking it.");
-        actions.moveToElement(dotPillowHildamaria).perform();
+        actions.moveToElement(dotTarno).perform();
         sleep(2);
-        dotPillowHildamaria.click();
+        dotTooltipTarno.click();
     }
 }

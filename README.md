@@ -2,6 +2,9 @@
  Selenium automated testing on ikea.rs site
  <br>------------------------------------------<br>
  <br>
+ v.0.6.1 : Added log4j lof file creation.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Log4j will now properly create and fill .log file. <br>
+ <br>
 v.0.6 : Added testng.xml<br>
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implemented testng.xml that will output log files. Since project is using log4j mainly, testng reporting is only implemented as proof of work for ProductSearchTest.<br>
  <br>

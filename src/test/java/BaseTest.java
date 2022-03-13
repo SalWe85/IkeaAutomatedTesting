@@ -1,17 +1,23 @@
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.WebDriver;
+import java.io.File;
 
-public class BaseTest {
+public class BaseTest{
 
-    public static WebDriver driver;
+    protected WebDriver driver;
     public static Logger log = LogManager.getLogger();
 
     @BeforeSuite
@@ -29,6 +35,24 @@ public class BaseTest {
         }
     }
 
+//    @AfterMethod(alwaysRun=true)
+//    public void invokeScreenshotMethod(ITestResult result)
+//    {
+//        if (ITestResult.FAILURE==result.getStatus()){
+//            try{
+//               TakesScreenshot ts=(TakesScreenshot) driver;
+//
+//                File src= ts.getScreenshotAs(OutputType.FILE);
+//                FileUtils.copyFile(src, new File("C:/Users/SalWe/IdeaProjects/IkeaAutomatedTesting/Screenshots"
+//                        + result.getName()+ ".png"));
+//            }
+//            catch(Exception e)
+//            {
+//                log.info(e);
+//            }
+//        }
+
+
     public ChromeDriver openChromeDriver() {
         log.info("Opening Chrome Driver");
         ChromeOptions options = new ChromeOptions();
@@ -45,7 +69,6 @@ public class BaseTest {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@id='onetrust-accept-btn-handler']")));
         return driver;
     }
-
 
     public static void waitByXpath (ChromeDriver driver, String xpath) {
         WebDriverWait wait = new WebDriverWait(driver, 5);
